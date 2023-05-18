@@ -47,7 +47,7 @@ UsercSchema.methods.matchPassword = async function (password) {
 };
 
 //sign JWT and return
-UsercSchema.methods.getSignedJwtToken = function () {
+UsercSchema.methods.getSignedJwtToken = function (res) {
   const accessToken = jwt.sign(
     { id: this._id },
     process.env.JWT_ACCESS_SECRET,

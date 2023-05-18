@@ -5,7 +5,7 @@ const user = require("../models/User");
 const ErrorResponse = require("../utils/errorResponse");
 
 const sendToken = (user, statusCode, res) => {
-  const token = user.getSignedJwtToken();
+  const token = user.getSignedJwtToken(res);
   res.status(statusCode).json({ success: true, token });
 };
 
